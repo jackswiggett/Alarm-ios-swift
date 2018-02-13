@@ -8,9 +8,10 @@
 
 import UIKit
 
-class LabelEditViewController: UIViewController, UITextFieldDelegate {
+class LabelEditViewController: UIViewController, UITextViewDelegate {
 
-    @IBOutlet weak var labelTextField: UITextField!
+    @IBOutlet weak var labelTextField: UITextView!
+    
     var label: String!
     
     override func viewDidLoad() {
@@ -21,9 +22,14 @@ class LabelEditViewController: UIViewController, UITextFieldDelegate {
         
         labelTextField.text = label
         
-        //defined in UITextInputTraits protocol
-        labelTextField.returnKeyType = UIReturnKeyType.done
-        labelTextField.enablesReturnKeyAutomatically = true
+        // Adding "Save Goals" button to keyboard:
+        // https://stackoverflow.com/questions/10077155/how-to-add-done-button-to-the-keyboard
+        let ViewForDoneButtonOnKeyboard = UIToolbar()
+        ViewForDoneButtonOnKeyboard.sizeToFit()
+        let btnDoneOnKeyboard = UIBarButtonItem(title: "Save Goals", style: .done, target: self, action: #selector(self.doneBtnFromKeyboardClicked))
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        ViewForDoneButtonOnKeyboard.items = [flexibleSpace, btnDoneOnKeyboard, flexibleSpace]
+        labelTextField.inputAccessoryView = ViewForDoneButtonOnKeyboard
     }
     
     override func didReceiveMemoryWarning() {
@@ -31,12 +37,12 @@ class LabelEditViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        label = textField.text!
+    func textViewDidEndEditing(_ textView: UITextView) {
+        label = textView.text!
         performSegue(withIdentifier: Id.labelUnwindIdentifier, sender: self)
-        //This method can be used when no state passing is needed
-        //navigationController?.popViewController(animated: true)
-        return false
     }
-
+    
+    @IBAction func doneBtnFromKeyboardClicked (sender: Any) {
+        self.labelTextField.endEditing(true)
+    }
 }

@@ -25,27 +25,35 @@ class Scheduler : AlarmSchedulerDelegate
         let notificationTypes: UIUserNotificationType = [UIUserNotificationType.alert, UIUserNotificationType.sound]
         
         // Specify the notification actions.
-        let stopAction = UIMutableUserNotificationAction()
-        stopAction.identifier = Id.stopIdentifier
-        stopAction.title = "OK"
-        stopAction.activationMode = UIUserNotificationActivationMode.background
-        stopAction.isDestructive = false
-        stopAction.isAuthenticationRequired = false
+//        let stopAction = UIMutableUserNotificationAction()
+//        stopAction.identifier = Id.stopIdentifier
+//        stopAction.title = "OK"
+//        stopAction.activationMode = UIUserNotificationActivationMode.background
+//        stopAction.isDestructive = false
+//        stopAction.isAuthenticationRequired = false
         
         let snoozeAction = UIMutableUserNotificationAction()
         snoozeAction.identifier = Id.snoozeIdentifier
-        snoozeAction.title = "Snooze"
+        snoozeAction.title = "Snooze v2"
         snoozeAction.activationMode = UIUserNotificationActivationMode.background
         snoozeAction.isDestructive = false
         snoozeAction.isAuthenticationRequired = false
         
-        let actionsArray = snoozeEnabled ? [UIUserNotificationAction](arrayLiteral: snoozeAction, stopAction) : [UIUserNotificationAction](arrayLiteral: stopAction)
-        let actionsArrayMinimal = snoozeEnabled ? [UIUserNotificationAction](arrayLiteral: snoozeAction, stopAction) : [UIUserNotificationAction](arrayLiteral: stopAction)
+        let goalAction = UIMutableUserNotificationAction()
+        goalAction.identifier = Id.goalIdentifier
+        goalAction.title = "What is your goal this morning?"
+        goalAction.activationMode = .background
+        goalAction.isAuthenticationRequired = false
+        goalAction.isDestructive = false
+        goalAction.behavior = .textInput
+        
+        let actionsArray = snoozeEnabled ? [UIUserNotificationAction](arrayLiteral: snoozeAction, goalAction) : [UIUserNotificationAction](arrayLiteral: goalAction)
+        let actionsArrayMinimal = snoozeEnabled ? [UIUserNotificationAction](arrayLiteral: snoozeAction, goalAction) : [UIUserNotificationAction](arrayLiteral: goalAction)
         // Specify the category related to the above actions.
         let alarmCategory = UIMutableUserNotificationCategory()
         alarmCategory.identifier = "myAlarmCategory"
-        alarmCategory.setActions(actionsArray, for: .default)
-        alarmCategory.setActions(actionsArrayMinimal, for: .minimal)
+        alarmCategory.setActions([snoozeAction, goalAction], for: .default)
+        alarmCategory.setActions([snoozeAction, goalAction], for: .minimal)
         
         
         let categoriesForSettings = Set(arrayLiteral: alarmCategory)
@@ -153,6 +161,7 @@ class Scheduler : AlarmSchedulerDelegate
         let now = Date()
         let snoozeTime = (calendar as NSCalendar).date(byAdding: NSCalendar.Unit.minute, value: snoozeMinute, to: now, options:.matchStrictly)!
         setNotificationWithDate(snoozeTime, onWeekdaysForNotify: [Int](), snoozeEnabled: true, onSnooze:true, soundName: soundName, index: index)
+        print("Snooze scheduled")
     }
     
     func reSchedule() {

@@ -3,3 +3,5 @@ tags
 UserInterfaceState.xcuserstate
 *.xcbkptlist
 xcuserdata
+.DS_Store
+*~

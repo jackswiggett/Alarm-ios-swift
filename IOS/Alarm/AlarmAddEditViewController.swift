@@ -94,7 +94,7 @@ class AlarmAddEditViewController: UIViewController, UITableViewDelegate, UITable
                 cell!.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
             }
             else if indexPath.row == 1 {
-                cell!.textLabel!.text = "Label"
+                cell!.textLabel!.text = "Goals"
                 cell!.detailTextLabel!.text = segueInfo.label
                 cell!.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
             }

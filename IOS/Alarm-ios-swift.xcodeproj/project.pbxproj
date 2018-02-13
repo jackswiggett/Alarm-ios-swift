@@ -16,6 +16,7 @@
 		77A8570F1E41A04600971367 /* AlarmSchedulerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A8570E1E41A04600971367 /* AlarmSchedulerDelegate.swift */; };
 		77B08F9F1EA6552100BECF6C /* NotificationName+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B08F9E1EA6552100BECF6C /* NotificationName+Extension.swift */; };
 		77CBDC612010E8A200F5D554 /* SchedulerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CBDC602010E8A200F5D554 /* SchedulerTestCase.swift */; };
+		78EBADB1202FD09300C3074A /* InputGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EBADB0202FD09300C3074A /* InputGoalsViewController.swift */; };
 		9E16062C1C62358F009B2407 /* MediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E16062B1C62358F009B2407 /* MediaViewController.swift */; };
 		9E1F30731C49128000C66F79 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1F30721C49128000C66F79 /* Scheduler.swift */; };
 		9E3B062F1BB8347000453456 /* bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9E3B062E1BB8347000453456 /* bell.mp3 */; };
@@ -51,6 +52,7 @@
 		77A8570E1E41A04600971367 /* AlarmSchedulerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmSchedulerDelegate.swift; sourceTree = "<group>"; };
 		77B08F9E1EA6552100BECF6C /* NotificationName+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NotificationName+Extension.swift"; sourceTree = "<group>"; };
 		77CBDC602010E8A200F5D554 /* SchedulerTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulerTestCase.swift; sourceTree = "<group>"; };
+		78EBADB0202FD09300C3074A /* InputGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputGoalsViewController.swift; sourceTree = "<group>"; };
 		9E16062B1C62358F009B2407 /* MediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaViewController.swift; sourceTree = "<group>"; };
 		9E1F30721C49128000C66F79 /* Scheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
 		9E3B062E1BB8347000453456 /* bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bell.mp3; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				9E16062B1C62358F009B2407 /* MediaViewController.swift */,
 				9E9BEE061BCF8FF8000CF364 /* WeekdaysViewController.swift */,
 				9E603F581BD7CA6600303E93 /* LabelEditViewController.swift */,
+				78EBADB0202FD09300C3074A /* InputGoalsViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -259,7 +262,7 @@
 				TargetAttributes = {
 					9EED786B1AA0F03F00961BC2 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = HLGGTJ4M3A;
+						DevelopmentTeam = 53C8MUKNT9;
 						LastSwiftMigration = 0910;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -333,6 +336,7 @@
 				9EEEC58C1BC641BF00459CF7 /* MainAlarmViewController.swift in Sources */,
 				7732E6131E38A50200C9D9A2 /* Persistable.swift in Sources */,
 				7701B7B31E99414800908B6C /* UIWindow+Extension.swift in Sources */,
+				78EBADB1202FD09300C3074A /* InputGoalsViewController.swift in Sources */,
 				77A8570F1E41A04600971367 /* AlarmSchedulerDelegate.swift in Sources */,
 				77570F6B1E3EEA75005E2923 /* PropertyReflectable.swift in Sources */,
 				9E9BEE071BCF8FF8000CF364 /* WeekdaysViewController.swift in Sources */,
@@ -480,11 +484,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = HLGGTJ4M3A;
+				DEVELOPMENT_TEAM = 53C8MUKNT9;
 				INFOPLIST_FILE = Alarm/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = LongGames.Alarm.ios.swift;
+				PRODUCT_BUNDLE_IDENTIFIER = CS247.Prototype.Alarm;
 				PRODUCT_NAME = "Alarm-ios-swift";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
@@ -495,11 +499,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = HLGGTJ4M3A;
+				DEVELOPMENT_TEAM = 53C8MUKNT9;
 				INFOPLIST_FILE = Alarm/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = LongGames.Alarm.ios.swift;
+				PRODUCT_BUNDLE_IDENTIFIER = CS247.Prototype.Alarm;
 				PRODUCT_NAME = "Alarm-ios-swift";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
