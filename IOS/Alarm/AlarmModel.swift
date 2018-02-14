@@ -18,7 +18,7 @@ struct Alarm: PropertyReflectable {
     var uuid: String = ""
     var mediaID: String = ""
     var mediaLabel: String = "bell"
-    var label: String = "Alarm"
+    var label: String = "Enter your morning goals"
     var onSnooze: Bool = false
     
     init(){}
