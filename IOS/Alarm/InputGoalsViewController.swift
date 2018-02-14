@@ -8,21 +8,28 @@
 
 import UIKit
 
+@objcMembers
 class InputGoalsViewController: UIViewController {
     
     // Properties
+    var rememberedGoals: String?
     var currentGoal: String?
     var alarm: Alarm?
     var alarmScheduler: AlarmSchedulerDelegate = Scheduler()
 
     @IBOutlet weak var goalInput: UITextView!
-
+    @IBOutlet weak var rememberedGoalsView: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         if let goal = currentGoal {
             goalInput.text = goal
+        }
+        if let remembered = rememberedGoals {
+            rememberedGoalsView.text = remembered
         }
         
     }
@@ -36,7 +43,7 @@ class InputGoalsViewController: UIViewController {
         self.alarm!.onSnooze = false
         self.alarm!.enabled = false
         alarmScheduler.reSchedule()
-        self.dismiss(animated: true, completion: nil)
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     /*

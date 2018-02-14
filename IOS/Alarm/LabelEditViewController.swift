@@ -8,6 +8,7 @@
 
 import UIKit
 
+@objcMembers
 class LabelEditViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var labelTextField: UITextView!

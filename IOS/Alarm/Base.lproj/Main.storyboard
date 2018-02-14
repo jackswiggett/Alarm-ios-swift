@@ -82,6 +82,60 @@
             </objects>
             <point key="canvasLocation" x="1901.25" y="-247.18309859154928"/>
         </scene>
+        <!--Remember Goals View Controller-->
+        <scene sceneID="Kgh-f7-wLd">
+            <objects>
+                <viewController storyboardIdentifier="rememberGoals" id="uJl-9K-g50" customClass="RememberGoalsViewController" customModule="Alarm_ios_swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y08-iv-g7Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="MSy-kP-6bh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aDd-QA-PmF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you remember your goals for this morning?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Apy-7U-plj">
+                                <rect key="frame" x="16" y="20" width="343" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="hcv-ir-Oxe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your goals below." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMC-A7-P2i">
+                                <rect key="frame" x="16" y="110" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dv9-FN-JG9">
+                                <rect key="frame" x="16" y="157" width="343" height="490"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Apy-7U-plj" secondAttribute="trailing" constant="16" id="3bg-Ss-prM"/>
+                            <constraint firstAttribute="trailing" secondItem="QMC-A7-P2i" secondAttribute="trailing" constant="16" id="eAm-BQ-s5s"/>
+                            <constraint firstItem="Apy-7U-plj" firstAttribute="top" secondItem="y08-iv-g7Z" secondAttribute="bottom" id="kjx-rS-I5K"/>
+                            <constraint firstItem="Apy-7U-plj" firstAttribute="leading" secondItem="aDd-QA-PmF" secondAttribute="leading" constant="16" id="nlH-XA-7Md"/>
+                            <constraint firstItem="QMC-A7-P2i" firstAttribute="leading" secondItem="aDd-QA-PmF" secondAttribute="leading" constant="16" id="p5b-7e-Hsp"/>
+                            <constraint firstItem="QMC-A7-P2i" firstAttribute="top" secondItem="Apy-7U-plj" secondAttribute="bottom" constant="20" id="yBn-op-aO7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="goalsTextView" destination="Dv9-FN-JG9" id="YYb-9b-zsB"/>
+                        <segue destination="98f-lb-ugB" kind="show" identifier="goalSegue" id="9G9-lS-OYT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZBC-j5-S0Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2744.8000000000002" y="-1086.2068965517242"/>
+        </scene>
         <!--Input Goals View Controller-->
         <scene sceneID="Vb9-b9-49C">
             <objects>
@@ -95,16 +149,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Goals will go here" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJQ-9H-QXu">
-                                <rect key="frame" x="20" y="233" width="335" height="200"/>
+                                <rect key="frame" x="20" y="280" width="335" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="1cI-Sg-Srr"/>
+                                    <constraint firstAttribute="height" constant="150" id="1cI-Sg-Srr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4QE-R8-LJp">
-                                <rect key="frame" x="160.5" y="463" width="53" height="36"/>
+                                <rect key="frame" x="160.5" y="460" width="53" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Got it!"/>
                                 <connections>
@@ -112,25 +166,46 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here are your goals this morning:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Dc-HW-ROw">
-                                <rect key="frame" x="55" y="182" width="265" height="21"/>
+                                <rect key="frame" x="55" y="239" width="265" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Here's what you just wrote:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ym6-ix-PTY">
+                                <rect key="frame" x="78" y="28" width="219" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Goals will go here" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UJr-Fa-due">
+                                <rect key="frame" x="16" y="69" width="343" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="AdT-qh-T3Q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5Dc-HW-ROw" firstAttribute="centerX" secondItem="o3Z-v0-xHH" secondAttribute="centerX" id="0AC-nq-ckT"/>
                             <constraint firstAttribute="trailing" secondItem="QJQ-9H-QXu" secondAttribute="trailing" constant="20" id="1fP-bO-q80"/>
-                            <constraint firstItem="QJQ-9H-QXu" firstAttribute="top" secondItem="5Dc-HW-ROw" secondAttribute="bottom" constant="30" id="2ux-O4-ojB"/>
+                            <constraint firstItem="QJQ-9H-QXu" firstAttribute="top" secondItem="5Dc-HW-ROw" secondAttribute="bottom" constant="20" id="2ux-O4-ojB"/>
+                            <constraint firstItem="Ym6-ix-PTY" firstAttribute="top" secondItem="ESe-a5-ARC" secondAttribute="bottom" constant="8" id="7OW-4J-1hI"/>
+                            <constraint firstItem="UJr-Fa-due" firstAttribute="leading" secondItem="o3Z-v0-xHH" secondAttribute="leading" constant="16" id="9oN-4Y-LVb"/>
                             <constraint firstItem="4QE-R8-LJp" firstAttribute="top" secondItem="QJQ-9H-QXu" secondAttribute="bottom" constant="30" id="DCn-RT-uYX"/>
+                            <constraint firstItem="UJr-Fa-due" firstAttribute="top" secondItem="Ym6-ix-PTY" secondAttribute="bottom" constant="20" id="aZ9-Pb-VLP"/>
                             <constraint firstItem="QJQ-9H-QXu" firstAttribute="leading" secondItem="o3Z-v0-xHH" secondAttribute="leading" constant="20" id="ktc-II-NgF"/>
-                            <constraint firstItem="QJQ-9H-QXu" firstAttribute="centerY" secondItem="o3Z-v0-xHH" secondAttribute="centerY" id="sd8-8U-zO9"/>
+                            <constraint firstItem="Ym6-ix-PTY" firstAttribute="centerX" secondItem="o3Z-v0-xHH" secondAttribute="centerX" id="oy7-Zj-tuo"/>
+                            <constraint firstItem="5Dc-HW-ROw" firstAttribute="top" secondItem="UJr-Fa-due" secondAttribute="bottom" constant="20" id="vbk-5C-9af"/>
                             <constraint firstItem="4QE-R8-LJp" firstAttribute="centerX" secondItem="o3Z-v0-xHH" secondAttribute="centerX" id="wLV-Zl-0vt"/>
+                            <constraint firstAttribute="trailing" secondItem="UJr-Fa-due" secondAttribute="trailing" constant="16" id="ymj-02-mbG"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="goalInput" destination="QJQ-9H-QXu" id="f7C-Kn-heQ"/>
+                        <outlet property="rememberedGoalsView" destination="UJr-Fa-due" id="uoU-iK-7X1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DbN-Q5-k8A" userLabel="First Responder" sceneMemberID="firstResponder"/>

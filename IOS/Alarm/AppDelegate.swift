@@ -51,12 +51,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AVAudioPlayerDelegate, Al
         
         let rootVC = UIApplication.shared.keyWindow?.rootViewController
         let storyboard = rootVC!.storyboard!
-        let inputGoalsVC = storyboard.instantiateViewController(withIdentifier: "inputGoals") as! InputGoalsViewController
+        let rememberGoalsVC = storyboard.instantiateViewController(withIdentifier: "rememberGoals") as! RememberGoalsViewController
         
         self.alarmModel = Alarms()
-        inputGoalsVC.currentGoal = self.alarmModel.alarms[index].label
-        inputGoalsVC.alarm = self.alarmModel.alarms[index]
-        window?.visibleViewController?.navigationController?.present(inputGoalsVC, animated: true, completion: nil)
+        rememberGoalsVC.currentGoal = self.alarmModel.alarms[index].label
+        rememberGoalsVC.alarm = self.alarmModel.alarms[index]
+        window?.visibleViewController?.navigationController?.present(rememberGoalsVC, animated: true, completion: nil)
         
         //show an alert window
 //        let storageController = UIAlertController(title: "Alarm", message: nil, preferredStyle: .alert)

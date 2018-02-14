@@ -17,6 +17,7 @@ struct Id {
     static let saveSegueIdentifier = "saveEditSegue"
     static let soundSegueIdentifier = "soundSegue"
     static let labelSegueIdentifier = "labelEditSegue"
+    static let goalSegueIdentifier = "goalSegue"
     static let weekdaysSegueIdentifier = "weekdaysSegue"
     static let settingIdentifier = "setting"
     static let musicIdentifier = "musicIdentifier"
