@@ -109,9 +109,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dv9-FN-JG9">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dv9-FN-JG9">
                                 <rect key="frame" x="16" y="157" width="343" height="490"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -120,10 +119,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Apy-7U-plj" secondAttribute="trailing" constant="16" id="3bg-Ss-prM"/>
+                            <constraint firstItem="MSy-kP-6bh" firstAttribute="top" secondItem="Dv9-FN-JG9" secondAttribute="bottom" constant="20" id="ART-1V-ngN"/>
+                            <constraint firstItem="Dv9-FN-JG9" firstAttribute="top" secondItem="QMC-A7-P2i" secondAttribute="bottom" constant="26" id="LHQ-hh-zCc"/>
+                            <constraint firstItem="Dv9-FN-JG9" firstAttribute="centerX" secondItem="aDd-QA-PmF" secondAttribute="centerX" id="dX2-2u-FU8"/>
                             <constraint firstAttribute="trailing" secondItem="QMC-A7-P2i" secondAttribute="trailing" constant="16" id="eAm-BQ-s5s"/>
                             <constraint firstItem="Apy-7U-plj" firstAttribute="top" secondItem="y08-iv-g7Z" secondAttribute="bottom" id="kjx-rS-I5K"/>
                             <constraint firstItem="Apy-7U-plj" firstAttribute="leading" secondItem="aDd-QA-PmF" secondAttribute="leading" constant="16" id="nlH-XA-7Md"/>
                             <constraint firstItem="QMC-A7-P2i" firstAttribute="leading" secondItem="aDd-QA-PmF" secondAttribute="leading" constant="16" id="p5b-7e-Hsp"/>
+                            <constraint firstAttribute="trailing" secondItem="Dv9-FN-JG9" secondAttribute="trailing" constant="16" id="uoS-OA-rbA"/>
                             <constraint firstItem="QMC-A7-P2i" firstAttribute="top" secondItem="Apy-7U-plj" secondAttribute="bottom" constant="20" id="yBn-op-aO7"/>
                         </constraints>
                     </view>
